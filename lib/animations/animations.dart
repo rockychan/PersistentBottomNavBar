@@ -33,7 +33,7 @@ class _OffsetAnimationState extends State<OffsetAnimation>
     _navBarHideAnimationController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 200));
     _navBarOffsetAnimation = Tween<Offset>(
-            begin: Offset(0, 0), end: Offset(0, widget.navBarHeight! + 22.0))
+            begin: Offset(0, widget.navBarHeight! + 22.0), end: Offset(0, 0))
         .chain(CurveTween(curve: Curves.ease))
         .animate(_navBarHideAnimationController);
 
@@ -54,9 +54,9 @@ class _OffsetAnimationState extends State<OffsetAnimation>
   _hideAnimation() {
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       if (_hideNavigationBar!) {
-        _navBarHideAnimationController.forward();
-      } else {
         _navBarHideAnimationController.reverse();
+      } else {
+        _navBarHideAnimationController.forward();
       }
     });
   }
