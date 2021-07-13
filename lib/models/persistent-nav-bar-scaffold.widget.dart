@@ -176,7 +176,10 @@ class _PersistentTabScaffoldState extends State<PersistentTabScaffold> {
                                   .dimensions.vertical
                               : 0.0))
                   : 0.0);
-      contentPadding = bottomPadding;
+      // contentPadding = bottomPadding;
+      // Hardcoded screen bottom padding to 0
+      // make the screen content extend to screen bottom within safe area
+      contentPadding = 0.0;
     } else {
       if ((!widget.resizeToAvoidBottomInset ||
           widget.tabBar.navBarEssentials!.navBarHeight! >
