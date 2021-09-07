@@ -153,6 +153,7 @@ class PersistentTabView extends PersistentTabViewBase {
     this.hideNavigationBar,
     this.screenTransitionAnimation = const ScreenTransitionAnimation(),
     double navBarHeight = kBottomNavigationBarHeight,
+    NavBarDecoration decoration = const NavBarDecoration(),
   }) : super(
           key: key,
           context: context,
@@ -173,7 +174,7 @@ class PersistentTabView extends PersistentTabViewBase {
           hideNavigationBar: hideNavigationBar,
           screenTransitionAnimation: screenTransitionAnimation,
           isCustomWidget: true,
-          decoration: NavBarDecoration(),
+          decoration: decoration,
           navBarHeight: navBarHeight,
         ) {
     assert(itemCount == screens.length,
